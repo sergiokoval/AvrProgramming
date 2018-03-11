@@ -40,13 +40,3 @@ void SerialCommunication::SendString(const char * str)
 		str++;
 	}
 }
-
-// default constructor
-SerialCommunication::SerialCommunication()
-{
-} //SerialCommunication
-
-// default destructor
-SerialCommunication::~SerialCommunication()
-{
-} //~SerialCommunication

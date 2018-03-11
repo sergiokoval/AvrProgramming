@@ -3,29 +3,29 @@ Atmega8Test.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         000001f6  00000000  00000000  00000074  2**1
+  0 .text         000001ee  00000000  00000000  00000074  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000016  00800060  000001f6  0000026a  2**0
+  1 .data         00000016  00800060  000001ee  00000262  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .comment      00000030  00000000  00000000  00000280  2**0
+  2 .comment      00000030  00000000  00000000  00000278  2**0
                   CONTENTS, READONLY
-  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000002b0  2**2
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000002a8  2**2
                   CONTENTS, READONLY
-  4 .debug_aranges 00000098  00000000  00000000  000002ec  2**0
+  4 .debug_aranges 00000088  00000000  00000000  000002e4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   00000f67  00000000  00000000  00000384  2**0
+  5 .debug_info   00000d89  00000000  00000000  0000036c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 00000932  00000000  00000000  000012eb  2**0
+  6 .debug_abbrev 000008ce  00000000  00000000  000010f5  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   00000440  00000000  00000000  00001c1d  2**0
+  7 .debug_line   0000041a  00000000  00000000  000019c3  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  00000100  00000000  00000000  00002060  2**2
+  8 .debug_frame  000000e0  00000000  00000000  00001de0  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    00000618  00000000  00000000  00002160  2**0
+  9 .debug_str    00000563  00000000  00000000  00001ec0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    0000022c  00000000  00000000  00002778  2**0
+ 10 .debug_loc    0000022c  00000000  00000000  00002423  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000088  00000000  00000000  000029a4  2**0
+ 11 .debug_ranges 00000078  00000000  00000000  0000264f  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -63,7 +63,7 @@ Disassembly of section .text:
   32:	10 e0       	ldi	r17, 0x00	; 0
   34:	a0 e6       	ldi	r26, 0x60	; 96
   36:	b0 e0       	ldi	r27, 0x00	; 0
-  38:	e6 ef       	ldi	r30, 0xF6	; 246
+  38:	ee ee       	ldi	r30, 0xEE	; 238
   3a:	f1 e0       	ldi	r31, 0x01	; 1
   3c:	02 c0       	rjmp	.+4      	; 0x42 <__SREG__+0x3>
   3e:	05 90       	lpm	r0, Z+
@@ -72,7 +72,7 @@ Disassembly of section .text:
   44:	b1 07       	cpc	r27, r17
   46:	d9 f7       	brne	.-10     	; 0x3e <__SP_H__>
   48:	2b d0       	rcall	.+86     	; 0xa0 <main>
-  4a:	d3 c0       	rjmp	.+422    	; 0x1f2 <_exit>
+  4a:	cf c0       	rjmp	.+414    	; 0x1ea <_exit>
 
 0000004c <__bad_interrupt>:
   4c:	d9 cf       	rjmp	.-78     	; 0x0 <__vectors>
@@ -177,280 +177,271 @@ int main(void)
   ca:	c1 df       	rcall	.-126    	; 0x4e <_ZN9LedDriver12SetOutputPinEs>
 
 	SerialCommunication sc;
-  cc:	ce 01       	movw	r24, r28
-  ce:	05 96       	adiw	r24, 0x05	; 5
-  d0:	5c d0       	rcall	.+184    	; 0x18a <_ZN19SerialCommunicationC1Ev>
 	sc.InitUart(25);
-  d2:	69 e1       	ldi	r22, 0x19	; 25
-  d4:	70 e0       	ldi	r23, 0x00	; 0
-  d6:	ce 01       	movw	r24, r28
-  d8:	05 96       	adiw	r24, 0x05	; 5
-  da:	38 d0       	rcall	.+112    	; 0x14c <_ZN19SerialCommunication8InitUartEj>
+  cc:	69 e1       	ldi	r22, 0x19	; 25
+  ce:	70 e0       	ldi	r23, 0x00	; 0
+  d0:	ce 01       	movw	r24, r28
+  d2:	05 96       	adiw	r24, 0x05	; 5
+  d4:	38 d0       	rcall	.+112    	; 0x146 <_ZN19SerialCommunication8InitUartEj>
 
 	DDRB &= ~(1 << PINB1);
-  dc:	b9 98       	cbi	0x17, 1	; 23
+  d6:	b9 98       	cbi	0x17, 1	; 23
 	PORTB |= (1<< PINB1);
-  de:	c1 9a       	sbi	0x18, 1	; 24
+  d8:	c1 9a       	sbi	0x18, 1	; 24
 
 	int isButtonPressed = 0;
 	int buttonPressedSampling = 0;
-  e0:	00 e0       	ldi	r16, 0x00	; 0
-  e2:	10 e0       	ldi	r17, 0x00	; 0
+  da:	00 e0       	ldi	r16, 0x00	; 0
+  dc:	10 e0       	ldi	r17, 0x00	; 0
 	sc.InitUart(25);
 
 	DDRB &= ~(1 << PINB1);
 	PORTB |= (1<< PINB1);
 
 	int isButtonPressed = 0;
-  e4:	80 e0       	ldi	r24, 0x00	; 0
-  e6:	90 e0       	ldi	r25, 0x00	; 0
-  e8:	c1 2c       	mov	r12, r1
-  ea:	d1 2c       	mov	r13, r1
-  ec:	ec 2c       	mov	r14, r12
-  ee:	fd 2c       	mov	r15, r13
+  de:	80 e0       	ldi	r24, 0x00	; 0
+  e0:	90 e0       	ldi	r25, 0x00	; 0
+  e2:	c1 2c       	mov	r12, r1
+  e4:	d1 2c       	mov	r13, r1
+  e6:	ec 2c       	mov	r14, r12
+  e8:	fd 2c       	mov	r15, r13
 			if(buttonPressedSampling > 1500)
 			{
 				if(isButtonPressed==0)
 				{
 					driver.TogglePin(Pin0);
 					isButtonPressed = 1;
-  f0:	aa 24       	eor	r10, r10
-  f2:	a3 94       	inc	r10
-  f4:	b1 2c       	mov	r11, r1
-  f6:	05 c0       	rjmp	.+10     	; 0x102 <main+0x62>
+  ea:	aa 24       	eor	r10, r10
+  ec:	a3 94       	inc	r10
+  ee:	b1 2c       	mov	r11, r1
+  f0:	05 c0       	rjmp	.+10     	; 0xfc <main+0x5c>
 
 					sc.SendString("\r\n Button pressed. \r\n");
 					sc.SendString(buff);
 					
 				}
 				buttonPressedSampling = 0;
-  f8:	00 e0       	ldi	r16, 0x00	; 0
-  fa:	10 e0       	ldi	r17, 0x00	; 0
-  fc:	02 c0       	rjmp	.+4      	; 0x102 <main+0x62>
-  fe:	8e 2d       	mov	r24, r14
- 100:	9f 2d       	mov	r25, r15
+  f2:	00 e0       	ldi	r16, 0x00	; 0
+  f4:	10 e0       	ldi	r17, 0x00	; 0
+  f6:	02 c0       	rjmp	.+4      	; 0xfc <main+0x5c>
+  f8:	8e 2d       	mov	r24, r14
+  fa:	9f 2d       	mov	r25, r15
 	int buttonReleasedSampling = 0;
 
     /* Replace with your application code */
     while (1) 
     {
 		if(bit_is_clear(PINB,PINB1))
- 102:	b1 99       	sbic	0x16, 1	; 22
- 104:	fc cf       	rjmp	.-8      	; 0xfe <main+0x5e>
+  fc:	b1 99       	sbic	0x16, 1	; 22
+  fe:	fc cf       	rjmp	.-8      	; 0xf8 <main+0x58>
 		{
 			buttonPressedSampling++;
- 106:	0f 5f       	subi	r16, 0xFF	; 255
- 108:	1f 4f       	sbci	r17, 0xFF	; 255
+ 100:	0f 5f       	subi	r16, 0xFF	; 255
+ 102:	1f 4f       	sbci	r17, 0xFF	; 255
 
 			if(buttonPressedSampling > 1500)
- 10a:	0d 3d       	cpi	r16, 0xDD	; 221
- 10c:	25 e0       	ldi	r18, 0x05	; 5
- 10e:	12 07       	cpc	r17, r18
- 110:	c4 f3       	brlt	.-16     	; 0x102 <main+0x62>
+ 104:	0d 3d       	cpi	r16, 0xDD	; 221
+ 106:	25 e0       	ldi	r18, 0x05	; 5
+ 108:	12 07       	cpc	r17, r18
+ 10a:	c4 f3       	brlt	.-16     	; 0xfc <main+0x5c>
 			{
 				if(isButtonPressed==0)
- 112:	00 97       	sbiw	r24, 0x00	; 0
- 114:	89 f7       	brne	.-30     	; 0xf8 <main+0x58>
+ 10c:	00 97       	sbiw	r24, 0x00	; 0
+ 10e:	89 f7       	brne	.-30     	; 0xf2 <main+0x52>
 				{
 					driver.TogglePin(Pin0);
- 116:	6c 2d       	mov	r22, r12
- 118:	7d 2d       	mov	r23, r13
- 11a:	ce 01       	movw	r24, r28
- 11c:	01 96       	adiw	r24, 0x01	; 1
- 11e:	ac df       	rcall	.-168    	; 0x78 <_ZN9LedDriver9TogglePinEs>
+ 110:	6c 2d       	mov	r22, r12
+ 112:	7d 2d       	mov	r23, r13
+ 114:	ce 01       	movw	r24, r28
+ 116:	01 96       	adiw	r24, 0x01	; 1
+ 118:	af df       	rcall	.-162    	; 0x78 <_ZN9LedDriver9TogglePinEs>
     } else if (__radix < 2 || __radix > 36) {
 	*__s = 0;
 	return __s;
     } else {
 	extern char *__itoa_ncheck (int, char *, unsigned char);
 	return __itoa_ncheck (__val, __s, __radix);
- 120:	4a e0       	ldi	r20, 0x0A	; 10
- 122:	be 01       	movw	r22, r28
- 124:	6a 5f       	subi	r22, 0xFA	; 250
- 126:	7f 4f       	sbci	r23, 0xFF	; 255
- 128:	c8 01       	movw	r24, r16
- 12a:	30 d0       	rcall	.+96     	; 0x18c <__itoa_ncheck>
+ 11a:	4a e0       	ldi	r20, 0x0A	; 10
+ 11c:	be 01       	movw	r22, r28
+ 11e:	6a 5f       	subi	r22, 0xFA	; 250
+ 120:	7f 4f       	sbci	r23, 0xFF	; 255
+ 122:	c8 01       	movw	r24, r16
+ 124:	2f d0       	rcall	.+94     	; 0x184 <__itoa_ncheck>
 					
 					char buff[10];
 
 					itoa(buttonPressedSampling,buff,10);
 
 					sc.SendString("\r\n Button pressed. \r\n");
- 12c:	60 e6       	ldi	r22, 0x60	; 96
- 12e:	70 e0       	ldi	r23, 0x00	; 0
- 130:	ce 01       	movw	r24, r28
- 132:	05 96       	adiw	r24, 0x05	; 5
- 134:	16 d0       	rcall	.+44     	; 0x162 <_ZN19SerialCommunication10SendStringEPKc>
+ 126:	60 e6       	ldi	r22, 0x60	; 96
+ 128:	70 e0       	ldi	r23, 0x00	; 0
+ 12a:	ce 01       	movw	r24, r28
+ 12c:	05 96       	adiw	r24, 0x05	; 5
+ 12e:	16 d0       	rcall	.+44     	; 0x15c <_ZN19SerialCommunication10SendStringEPKc>
 					sc.SendString(buff);
- 136:	be 01       	movw	r22, r28
- 138:	6a 5f       	subi	r22, 0xFA	; 250
- 13a:	7f 4f       	sbci	r23, 0xFF	; 255
- 13c:	ce 01       	movw	r24, r28
- 13e:	05 96       	adiw	r24, 0x05	; 5
- 140:	10 d0       	rcall	.+32     	; 0x162 <_ZN19SerialCommunication10SendStringEPKc>
+ 130:	be 01       	movw	r22, r28
+ 132:	6a 5f       	subi	r22, 0xFA	; 250
+ 134:	7f 4f       	sbci	r23, 0xFF	; 255
+ 136:	ce 01       	movw	r24, r28
+ 138:	05 96       	adiw	r24, 0x05	; 5
+ 13a:	10 d0       	rcall	.+32     	; 0x15c <_ZN19SerialCommunication10SendStringEPKc>
 					
 				}
 				buttonPressedSampling = 0;
- 142:	00 e0       	ldi	r16, 0x00	; 0
- 144:	10 e0       	ldi	r17, 0x00	; 0
+ 13c:	00 e0       	ldi	r16, 0x00	; 0
+ 13e:	10 e0       	ldi	r17, 0x00	; 0
 			if(buttonPressedSampling > 1500)
 			{
 				if(isButtonPressed==0)
 				{
 					driver.TogglePin(Pin0);
 					isButtonPressed = 1;
- 146:	8a 2d       	mov	r24, r10
- 148:	9b 2d       	mov	r25, r11
- 14a:	db cf       	rjmp	.-74     	; 0x102 <main+0x62>
+ 140:	8a 2d       	mov	r24, r10
+ 142:	9b 2d       	mov	r25, r11
+ 144:	db cf       	rjmp	.-74     	; 0xfc <main+0x5c>
 
-0000014c <_ZN19SerialCommunication8InitUartEj>:
+00000146 <_ZN19SerialCommunication8InitUartEj>:
 #include <avr/io.h>
 #include "SerialCommunication.h"
 
  void SerialCommunication::InitUart(unsigned int usartBaudRateRegisterValue)
 {
 	UBRRL = (unsigned char) usartBaudRateRegisterValue;
- 14c:	69 b9       	out	0x09, r22	; 9
+ 146:	69 b9       	out	0x09, r22	; 9
 	UBRRH = (unsigned char) (usartBaudRateRegisterValue >> 8);
- 14e:	70 bd       	out	0x20, r23	; 32
+ 148:	70 bd       	out	0x20, r23	; 32
 
 	// universal control and status registers 
 	// REGISTeR B 
 	// 8 Data bits, receive and transmit enabled, receive complete interrupt enabled
 	UCSRB = (( 1 << TXEN ) | (1<< RXEN) | (1 << RXCIE));
- 150:	88 e9       	ldi	r24, 0x98	; 152
- 152:	8a b9       	out	0x0a, r24	; 10
+ 14a:	88 e9       	ldi	r24, 0x98	; 152
+ 14c:	8a b9       	out	0x0a, r24	; 10
 
 	// REGISTER C
 	// Set the most used serial settings: asynchronous, no parity, 8 bit, 1 stop bit.
 	// The ATmega8 uses an URSEL bit, which is not present on newer chips.
 	UCSRC = (1 << URSEL) | (1 << UCSZ1) | ( 1 << UCSZ0); 
- 154:	86 e8       	ldi	r24, 0x86	; 134
- 156:	80 bd       	out	0x20, r24	; 32
- 158:	08 95       	ret
+ 14e:	86 e8       	ldi	r24, 0x86	; 134
+ 150:	80 bd       	out	0x20, r24	; 32
+ 152:	08 95       	ret
 
-0000015a <_ZN19SerialCommunication8SendCharEh>:
+00000154 <_ZN19SerialCommunication8SendCharEh>:
 }
 
 void SerialCommunication::SendChar( unsigned char data )
 {
 	/* Wait for empty transmit buffer */
 	while ( !( UCSRA & (1<<UDRE)) )
- 15a:	5d 9b       	sbis	0x0b, 5	; 11
- 15c:	fe cf       	rjmp	.-4      	; 0x15a <_ZN19SerialCommunication8SendCharEh>
+ 154:	5d 9b       	sbis	0x0b, 5	; 11
+ 156:	fe cf       	rjmp	.-4      	; 0x154 <_ZN19SerialCommunication8SendCharEh>
 	;
 	/* Put data into buffer, sends the data */
 	UDR = data;
- 15e:	6c b9       	out	0x0c, r22	; 12
- 160:	08 95       	ret
+ 158:	6c b9       	out	0x0c, r22	; 12
+ 15a:	08 95       	ret
 
-00000162 <_ZN19SerialCommunication10SendStringEPKc>:
+0000015c <_ZN19SerialCommunication10SendStringEPKc>:
 }
 
 void SerialCommunication::SendString(const char * str)
 {
- 162:	0f 93       	push	r16
- 164:	1f 93       	push	r17
- 166:	cf 93       	push	r28
- 168:	df 93       	push	r29
- 16a:	eb 01       	movw	r28, r22
+ 15c:	0f 93       	push	r16
+ 15e:	1f 93       	push	r17
+ 160:	cf 93       	push	r28
+ 162:	df 93       	push	r29
+ 164:	eb 01       	movw	r28, r22
 	while(*str)
- 16c:	68 81       	ld	r22, Y
- 16e:	66 23       	and	r22, r22
- 170:	39 f0       	breq	.+14     	; 0x180 <_ZN19SerialCommunication10SendStringEPKc+0x1e>
- 172:	8c 01       	movw	r16, r24
- 174:	21 96       	adiw	r28, 0x01	; 1
+ 166:	68 81       	ld	r22, Y
+ 168:	66 23       	and	r22, r22
+ 16a:	39 f0       	breq	.+14     	; 0x17a <_ZN19SerialCommunication10SendStringEPKc+0x1e>
+ 16c:	8c 01       	movw	r16, r24
+ 16e:	21 96       	adiw	r28, 0x01	; 1
 	{
 		SendChar(*str);
- 176:	c8 01       	movw	r24, r16
- 178:	f0 df       	rcall	.-32     	; 0x15a <_ZN19SerialCommunication8SendCharEh>
+ 170:	c8 01       	movw	r24, r16
+ 172:	f0 df       	rcall	.-32     	; 0x154 <_ZN19SerialCommunication8SendCharEh>
 	UDR = data;
 }
 
 void SerialCommunication::SendString(const char * str)
 {
 	while(*str)
- 17a:	69 91       	ld	r22, Y+
- 17c:	61 11       	cpse	r22, r1
- 17e:	fb cf       	rjmp	.-10     	; 0x176 <_ZN19SerialCommunication10SendStringEPKc+0x14>
+ 174:	69 91       	ld	r22, Y+
+ 176:	61 11       	cpse	r22, r1
+ 178:	fb cf       	rjmp	.-10     	; 0x170 <_ZN19SerialCommunication10SendStringEPKc+0x14>
 	{
 		SendChar(*str);
 		str++;
 	}
 }
- 180:	df 91       	pop	r29
- 182:	cf 91       	pop	r28
- 184:	1f 91       	pop	r17
- 186:	0f 91       	pop	r16
- 188:	08 95       	ret
+ 17a:	df 91       	pop	r29
+ 17c:	cf 91       	pop	r28
+ 17e:	1f 91       	pop	r17
+ 180:	0f 91       	pop	r16
+ 182:	08 95       	ret
 
-0000018a <_ZN19SerialCommunicationC1Ev>:
+00000184 <__itoa_ncheck>:
+ 184:	bb 27       	eor	r27, r27
+ 186:	4a 30       	cpi	r20, 0x0A	; 10
+ 188:	31 f4       	brne	.+12     	; 0x196 <__itoa_ncheck+0x12>
+ 18a:	99 23       	and	r25, r25
+ 18c:	22 f4       	brpl	.+8      	; 0x196 <__itoa_ncheck+0x12>
+ 18e:	bd e2       	ldi	r27, 0x2D	; 45
+ 190:	90 95       	com	r25
+ 192:	81 95       	neg	r24
+ 194:	9f 4f       	sbci	r25, 0xFF	; 255
+ 196:	01 c0       	rjmp	.+2      	; 0x19a <__utoa_common>
 
-// default constructor
-SerialCommunication::SerialCommunication()
- 18a:	08 95       	ret
+00000198 <__utoa_ncheck>:
+ 198:	bb 27       	eor	r27, r27
 
-0000018c <__itoa_ncheck>:
- 18c:	bb 27       	eor	r27, r27
- 18e:	4a 30       	cpi	r20, 0x0A	; 10
- 190:	31 f4       	brne	.+12     	; 0x19e <__itoa_ncheck+0x12>
- 192:	99 23       	and	r25, r25
- 194:	22 f4       	brpl	.+8      	; 0x19e <__itoa_ncheck+0x12>
- 196:	bd e2       	ldi	r27, 0x2D	; 45
- 198:	90 95       	com	r25
- 19a:	81 95       	neg	r24
- 19c:	9f 4f       	sbci	r25, 0xFF	; 255
- 19e:	01 c0       	rjmp	.+2      	; 0x1a2 <__utoa_common>
+0000019a <__utoa_common>:
+ 19a:	fb 01       	movw	r30, r22
+ 19c:	55 27       	eor	r21, r21
+ 19e:	aa 27       	eor	r26, r26
+ 1a0:	88 0f       	add	r24, r24
+ 1a2:	99 1f       	adc	r25, r25
+ 1a4:	aa 1f       	adc	r26, r26
+ 1a6:	a4 17       	cp	r26, r20
+ 1a8:	10 f0       	brcs	.+4      	; 0x1ae <__utoa_common+0x14>
+ 1aa:	a4 1b       	sub	r26, r20
+ 1ac:	83 95       	inc	r24
+ 1ae:	50 51       	subi	r21, 0x10	; 16
+ 1b0:	b9 f7       	brne	.-18     	; 0x1a0 <__utoa_common+0x6>
+ 1b2:	a0 5d       	subi	r26, 0xD0	; 208
+ 1b4:	aa 33       	cpi	r26, 0x3A	; 58
+ 1b6:	08 f0       	brcs	.+2      	; 0x1ba <__utoa_common+0x20>
+ 1b8:	a9 5d       	subi	r26, 0xD9	; 217
+ 1ba:	a1 93       	st	Z+, r26
+ 1bc:	00 97       	sbiw	r24, 0x00	; 0
+ 1be:	79 f7       	brne	.-34     	; 0x19e <__utoa_common+0x4>
+ 1c0:	b1 11       	cpse	r27, r1
+ 1c2:	b1 93       	st	Z+, r27
+ 1c4:	11 92       	st	Z+, r1
+ 1c6:	cb 01       	movw	r24, r22
+ 1c8:	00 c0       	rjmp	.+0      	; 0x1ca <strrev>
 
-000001a0 <__utoa_ncheck>:
- 1a0:	bb 27       	eor	r27, r27
+000001ca <strrev>:
+ 1ca:	dc 01       	movw	r26, r24
+ 1cc:	fc 01       	movw	r30, r24
+ 1ce:	67 2f       	mov	r22, r23
+ 1d0:	71 91       	ld	r23, Z+
+ 1d2:	77 23       	and	r23, r23
+ 1d4:	e1 f7       	brne	.-8      	; 0x1ce <strrev+0x4>
+ 1d6:	32 97       	sbiw	r30, 0x02	; 2
+ 1d8:	04 c0       	rjmp	.+8      	; 0x1e2 <strrev+0x18>
+ 1da:	7c 91       	ld	r23, X
+ 1dc:	6d 93       	st	X+, r22
+ 1de:	70 83       	st	Z, r23
+ 1e0:	62 91       	ld	r22, -Z
+ 1e2:	ae 17       	cp	r26, r30
+ 1e4:	bf 07       	cpc	r27, r31
+ 1e6:	c8 f3       	brcs	.-14     	; 0x1da <strrev+0x10>
+ 1e8:	08 95       	ret
 
-000001a2 <__utoa_common>:
- 1a2:	fb 01       	movw	r30, r22
- 1a4:	55 27       	eor	r21, r21
- 1a6:	aa 27       	eor	r26, r26
- 1a8:	88 0f       	add	r24, r24
- 1aa:	99 1f       	adc	r25, r25
- 1ac:	aa 1f       	adc	r26, r26
- 1ae:	a4 17       	cp	r26, r20
- 1b0:	10 f0       	brcs	.+4      	; 0x1b6 <__utoa_common+0x14>
- 1b2:	a4 1b       	sub	r26, r20
- 1b4:	83 95       	inc	r24
- 1b6:	50 51       	subi	r21, 0x10	; 16
- 1b8:	b9 f7       	brne	.-18     	; 0x1a8 <__utoa_common+0x6>
- 1ba:	a0 5d       	subi	r26, 0xD0	; 208
- 1bc:	aa 33       	cpi	r26, 0x3A	; 58
- 1be:	08 f0       	brcs	.+2      	; 0x1c2 <__utoa_common+0x20>
- 1c0:	a9 5d       	subi	r26, 0xD9	; 217
- 1c2:	a1 93       	st	Z+, r26
- 1c4:	00 97       	sbiw	r24, 0x00	; 0
- 1c6:	79 f7       	brne	.-34     	; 0x1a6 <__utoa_common+0x4>
- 1c8:	b1 11       	cpse	r27, r1
- 1ca:	b1 93       	st	Z+, r27
- 1cc:	11 92       	st	Z+, r1
- 1ce:	cb 01       	movw	r24, r22
- 1d0:	00 c0       	rjmp	.+0      	; 0x1d2 <strrev>
+000001ea <_exit>:
+ 1ea:	f8 94       	cli
 
-000001d2 <strrev>:
- 1d2:	dc 01       	movw	r26, r24
- 1d4:	fc 01       	movw	r30, r24
- 1d6:	67 2f       	mov	r22, r23
- 1d8:	71 91       	ld	r23, Z+
- 1da:	77 23       	and	r23, r23
- 1dc:	e1 f7       	brne	.-8      	; 0x1d6 <strrev+0x4>
- 1de:	32 97       	sbiw	r30, 0x02	; 2
- 1e0:	04 c0       	rjmp	.+8      	; 0x1ea <strrev+0x18>
- 1e2:	7c 91       	ld	r23, X
- 1e4:	6d 93       	st	X+, r22
- 1e6:	70 83       	st	Z, r23
- 1e8:	62 91       	ld	r22, -Z
- 1ea:	ae 17       	cp	r26, r30
- 1ec:	bf 07       	cpc	r27, r31
- 1ee:	c8 f3       	brcs	.-14     	; 0x1e2 <strrev+0x10>
- 1f0:	08 95       	ret
-
-000001f2 <_exit>:
- 1f2:	f8 94       	cli
-
-000001f4 <__stop_program>:
- 1f4:	ff cf       	rjmp	.-2      	; 0x1f4 <__stop_program>
+000001ec <__stop_program>:
+ 1ec:	ff cf       	rjmp	.-2      	; 0x1ec <__stop_program>

@@ -12,22 +12,12 @@
 
 class SerialCommunication
 {
-//variables
-public:
-protected:
-private:
 
 //functions
 public:
 	void InitUart(unsigned int);
 	void SendChar( unsigned char data );
 	void SendString(const char * str);
-	SerialCommunication();
-	~SerialCommunication();
-protected:
-private:
-	SerialCommunication( const SerialCommunication &c );
-	SerialCommunication& operator=( const SerialCommunication &c );
 
 }; //SerialCommunication
 

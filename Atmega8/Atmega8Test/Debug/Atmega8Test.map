@@ -26,8 +26,6 @@ Discarded input sections
  .text          0x00000000        0x0 SerialCommunication.o
  .data          0x00000000        0x0 SerialCommunication.o
  .bss           0x00000000        0x0 SerialCommunication.o
- .text._ZN19SerialCommunicationD2Ev
-                0x00000000        0x2 SerialCommunication.o
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
@@ -197,7 +195,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x1f6
+.text           0x00000000      0x1ee
  *(.vectors)
  .vectors       0x00000000       0x26 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega8a/avr4/crtatmega8a.o
                 0x00000000                __vector_default
@@ -285,36 +283,32 @@ END GROUP
                 0x00000094        0xc LedDriver.o
                 0x00000094                _ZN9LedDriverC1EPVhS1_
                 0x00000094                _ZN9LedDriverC2EPVhS1_
- .text.main     0x000000a0       0xac main.o
+ .text.main     0x000000a0       0xa6 main.o
                 0x000000a0                main
  .text._ZN19SerialCommunication8InitUartEj
-                0x0000014c        0xe SerialCommunication.o
-                0x0000014c                _ZN19SerialCommunication8InitUartEj
+                0x00000146        0xe SerialCommunication.o
+                0x00000146                _ZN19SerialCommunication8InitUartEj
  .text._ZN19SerialCommunication8SendCharEh
-                0x0000015a        0x8 SerialCommunication.o
-                0x0000015a                _ZN19SerialCommunication8SendCharEh
+                0x00000154        0x8 SerialCommunication.o
+                0x00000154                _ZN19SerialCommunication8SendCharEh
  .text._ZN19SerialCommunication10SendStringEPKc
-                0x00000162       0x28 SerialCommunication.o
-                0x00000162                _ZN19SerialCommunication10SendStringEPKc
- .text._ZN19SerialCommunicationC2Ev
-                0x0000018a        0x2 SerialCommunication.o
-                0x0000018a                _ZN19SerialCommunicationC1Ev
-                0x0000018a                _ZN19SerialCommunicationC2Ev
+                0x0000015c       0x28 SerialCommunication.o
+                0x0000015c                _ZN19SerialCommunication10SendStringEPKc
  .text.avr-libc
-                0x0000018c       0x14 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libc.a(itoa_ncheck.o)
-                0x0000018c                __itoa_ncheck
+                0x00000184       0x14 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libc.a(itoa_ncheck.o)
+                0x00000184                __itoa_ncheck
  .text.avr-libc
-                0x000001a0       0x32 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libc.a(utoa_ncheck.o)
-                0x000001a0                __utoa_ncheck
-                0x000001a2                __utoa_common
+                0x00000198       0x32 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libc.a(utoa_ncheck.o)
+                0x00000198                __utoa_ncheck
+                0x0000019a                __utoa_common
  .text.avr-libc
-                0x000001d2       0x20 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libc.a(strrev.o)
-                0x000001d2                strrev
-                0x000001f2                . = ALIGN (0x2)
+                0x000001ca       0x20 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libc.a(strrev.o)
+                0x000001ca                strrev
+                0x000001ea                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000001f2        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
-                0x000001f2                _exit
-                0x000001f2                exit
+ .fini9         0x000001ea        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+                0x000001ea                _exit
+                0x000001ea                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -333,11 +327,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000001f2        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+ .fini0         0x000001ea        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
  *(.fini0)
-                0x000001f6                _etext = .
+                0x000001ee                _etext = .
 
-.data           0x00800060       0x16 load address 0x000001f6
+.data           0x00800060       0x16 load address 0x000001ee
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -357,8 +351,8 @@ END GROUP
  *(.bss*)
  *(COMMON)
                 [!provide]                PROVIDE (__bss_end, .)
-                0x000001f6                __data_load_start = LOADADDR (.data)
-                0x0000020c                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000001ee                __data_load_start = LOADADDR (.data)
+                0x00000204                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800076        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
@@ -431,54 +425,54 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000       0x98
+.debug_aranges  0x00000000       0x88
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x38 LedDriver.o
  .debug_aranges
                 0x00000038       0x20 main.o
  .debug_aranges
-                0x00000058       0x40 SerialCommunication.o
+                0x00000058       0x30 SerialCommunication.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0xf67
+.debug_info     0x00000000      0xd89
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x48c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega8a/avr4/crtatmega8a.o
  .debug_info    0x0000048c      0x2d3 LedDriver.o
- .debug_info    0x0000075f      0x528 main.o
- .debug_info    0x00000c87      0x2e0 SerialCommunication.o
+ .debug_info    0x0000075f      0x47c main.o
+ .debug_info    0x00000bdb      0x1ae SerialCommunication.o
 
-.debug_abbrev   0x00000000      0x932
+.debug_abbrev   0x00000000      0x8ce
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x44e C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega8a/avr4/crtatmega8a.o
  .debug_abbrev  0x0000044e      0x161 LedDriver.o
- .debug_abbrev  0x000005af      0x209 main.o
- .debug_abbrev  0x000007b8      0x17a SerialCommunication.o
+ .debug_abbrev  0x000005af      0x21d main.o
+ .debug_abbrev  0x000007cc      0x102 SerialCommunication.o
 
-.debug_line     0x00000000      0x440
+.debug_line     0x00000000      0x41a
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x109 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega8a/avr4/crtatmega8a.o
  .debug_line    0x00000109       0xff LedDriver.o
- .debug_line    0x00000208      0x159 main.o
- .debug_line    0x00000361       0xdf SerialCommunication.o
+ .debug_line    0x00000208      0x153 main.o
+ .debug_line    0x0000035b       0xbf SerialCommunication.o
 
-.debug_frame    0x00000000      0x100
+.debug_frame    0x00000000       0xe0
  *(.debug_frame)
  .debug_frame   0x00000000       0x54 LedDriver.o
  .debug_frame   0x00000054       0x34 main.o
- .debug_frame   0x00000088       0x78 SerialCommunication.o
+ .debug_frame   0x00000088       0x58 SerialCommunication.o
 
-.debug_str      0x00000000      0x618
+.debug_str      0x00000000      0x563
  *(.debug_str)
  .debug_str     0x00000000      0x17a C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega8a/avr4/crtatmega8a.o
  .debug_str     0x0000017a      0x26a LedDriver.o
                                 0x2b8 (size before relaxing)
- .debug_str     0x000003e4      0x1bd main.o
-                                0x438 (size before relaxing)
- .debug_str     0x000005a1       0x77 SerialCommunication.o
-                                0x33e (size before relaxing)
+ .debug_str     0x000003e4      0x142 main.o
+                                0x3a9 (size before relaxing)
+ .debug_str     0x00000526       0x3d SerialCommunication.o
+                                0x261 (size before relaxing)
 
 .debug_loc      0x00000000      0x22c
  *(.debug_loc)
@@ -504,11 +498,11 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000       0x88
+.debug_ranges   0x00000000       0x78
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x28 LedDriver.o
  .debug_ranges  0x00000028       0x30 main.o
- .debug_ranges  0x00000058       0x30 SerialCommunication.o
+ .debug_ranges  0x00000058       0x20 SerialCommunication.o
 
 .debug_macro
  *(.debug_macro)
