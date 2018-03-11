@@ -18,12 +18,17 @@
 
 int main(void)
 {
-	LedDriver driver(&PORTB, &DDRB);
-	driver.SetOutputPin(Pin0);
+	LedDriver ledDriver(&PORTB, &DDRB);
+	SerialCommunication serialPort;
 
-	SerialCommunication sc;
-	sc.InitUart(25);
+	ledDriver.SetOutputPin(Pin0);	
+	
+	// set for baud rate 5200
+	// (1000000/16/5200) - 1 = 11
+	serialPort.InitUart(11);
 
+
+	// extract below into button driver
 	DDRB &= ~(1 << PINB1);
 	PORTB |= (1<< PINB1);
 
@@ -31,7 +36,6 @@ int main(void)
 	int buttonPressedSampling = 0;
 	int buttonReleasedSampling = 0;
 
-    /* Replace with your application code */
     while (1) 
     {
 		if(bit_is_clear(PINB,PINB1))
@@ -42,29 +46,33 @@ int main(void)
 			{
 				if(isButtonPressed==0)
 				{
-					driver.TogglePin(Pin0);
+					ledDriver.TogglePin(Pin0);
 					isButtonPressed = 1;
 					
 					char buff[10];
 
 					itoa(buttonPressedSampling,buff,10);
 
-					sc.SendString("\r\n Button pressed. \r\n");
-					sc.SendString(buff);
-					
+					serialPort.SendString("\r\n Button pressed. \r\n");
+					serialPort.SendString(buff);					
 				}
+
 				buttonPressedSampling = 0;
 			}	
 		}
 		else
 		{
-			//buttonReleasedSampling ++
-			if(isButtonPressed)
+			buttonReleasedSampling ++;
+
+			if (buttonReleasedSampling > 1500)
 			{
-			//driver.TogglePin(Pin0);
-				isButtonPressed = 0;
-				//_delay_ms(200);
+				if(isButtonPressed)
+				{					
+					isButtonPressed = 0;
+					serialPort.SendString("\r\n Button Released. \r\n");					
+				}
 			}
+			
 		}
     }
 }
