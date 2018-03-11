@@ -13,7 +13,7 @@
 #include "Pins.h"
 #include "SerialCommunication.h"
 
-// todo: extract button driver with lambda as action, upd no need, pass ports by address
+//TODO: extract button driver with lambda as action, upd no need, pass ports by address
 
 
 int main(void)
