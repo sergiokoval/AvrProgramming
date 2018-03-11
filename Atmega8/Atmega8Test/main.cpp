@@ -22,12 +22,9 @@ int main(void)
 	SerialCommunication serialPort;
 
 	ledDriver.SetOutputPin(Pin0);	
+		
+	serialPort.InitUart(5200);
 	
-	// set for baud rate 5200
-	// (1000000/16/5200) - 1 = 11
-	serialPort.InitUart(11);
-
-
 	// extract below into button driver
 	DDRB &= ~(1 << PINB1);
 	PORTB |= (1<< PINB1);
