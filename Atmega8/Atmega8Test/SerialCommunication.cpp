@@ -29,6 +29,7 @@
 
 void SerialCommunication::SendChar( unsigned char data )
 {
+	// If UDRE is one, the buffer is empty, and therefore ready to be written
 	/* Wait for empty transmit buffer */
 	while ( !( UCSRA & (1<<UDRE)) )  // UDRE (USART Data Register Empty)
 	;

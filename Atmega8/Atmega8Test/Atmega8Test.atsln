@@ -1,13 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Atmel Studio Solution File, Format Version 11.00
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "Atmega8Test", "Atmega8Test.cppproj", "{DCE6C7E3-EE26-4D79-826B-08594B9AD897}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E11447D0-F804-4A6F-9F07-B8DA6438A77E}"
 EndProject
 Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "uartTest", "uartTest\uartTest.cproj", "{497CA041-D495-4F11-978F-0A279B573B38}"
+EndProject
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "Counters", "..\Counters\Counters.cppproj", "{EE8327B7-D5C8-4255-A41C-CA6345C4924B}"
+EndProject
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "Interrupts", "Interrupts\Interrupts.cppproj", "{34331C31-D76E-4F6B-AB83-B8C3F84370AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +27,14 @@ Global
 		{497CA041-D495-4F11-978F-0A279B573B38}.Debug|AVR.Build.0 = Debug|AVR
 		{497CA041-D495-4F11-978F-0A279B573B38}.Release|AVR.ActiveCfg = Release|AVR
 		{497CA041-D495-4F11-978F-0A279B573B38}.Release|AVR.Build.0 = Release|AVR
+		{EE8327B7-D5C8-4255-A41C-CA6345C4924B}.Debug|AVR.ActiveCfg = Debug|AVR
+		{EE8327B7-D5C8-4255-A41C-CA6345C4924B}.Debug|AVR.Build.0 = Debug|AVR
+		{EE8327B7-D5C8-4255-A41C-CA6345C4924B}.Release|AVR.ActiveCfg = Release|AVR
+		{EE8327B7-D5C8-4255-A41C-CA6345C4924B}.Release|AVR.Build.0 = Release|AVR
+		{34331C31-D76E-4F6B-AB83-B8C3F84370AF}.Debug|AVR.ActiveCfg = Debug|AVR
+		{34331C31-D76E-4F6B-AB83-B8C3F84370AF}.Debug|AVR.Build.0 = Debug|AVR
+		{34331C31-D76E-4F6B-AB83-B8C3F84370AF}.Release|AVR.ActiveCfg = Release|AVR
+		{34331C31-D76E-4F6B-AB83-B8C3F84370AF}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
