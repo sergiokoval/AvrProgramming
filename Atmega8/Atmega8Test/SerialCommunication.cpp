@@ -11,10 +11,13 @@
 {
 	// set for baud rate 5200
 	// (F_CPU/16/5200) - 1 = 11
-	unsigned int usartBaudRateRegisterValue= (1000000 / 16 / baudRate) - 1;
+	unsigned int usartBaudRateRegisterValue= (1000000 / 16 / (baudRate / 2)) - 1;
 
-	UBRRL = (unsigned char) usartBaudRateRegisterValue;
+	UBRRL =  (unsigned char) usartBaudRateRegisterValue;
 	UBRRH = (unsigned char) (usartBaudRateRegisterValue >> 8);
+
+	// using x2 speed, giving 0.2% error at 9600bps, yay!
+	UCSRA = (1 << U2X);
 
 	// universal control and status registers 
 	// REGISTeR B 

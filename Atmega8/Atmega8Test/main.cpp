@@ -23,7 +23,7 @@ int main(void)
 
 	ledDriver.SetOutputPin(Pin0);	
 		
-	serialPort.InitUart(5200);
+	serialPort.InitUart(9600);
 	
 	// extract below into button driver
 	DDRB &= ~(1 << PINB1);

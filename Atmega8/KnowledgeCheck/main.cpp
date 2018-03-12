@@ -21,7 +21,7 @@ int main(void)
 	DDRB |= (1 << PINB0);
 	PORTB &= ~(1 << PINB0);
 
-	TCCR1B |= (1 << CS11) | (1 << CS10) | (1 << WGM12); // CTC clear timer on compare
+	TCCR1B |= (1 << CS11) | (1 << CS10) | (1 << WGM12); // wgm 12 CTC - clear timer on compare
 	TIMSK |= (1 << OCIE1A);
 	OCR1A = 15624;
     
