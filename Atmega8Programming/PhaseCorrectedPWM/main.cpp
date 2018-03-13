@@ -20,7 +20,6 @@ int main(void)
 	TCCR1B |= (1 << CS11);
 	// set prescaler to 8 and starts PWM
 
-
 	while (1)
 	{
 		// we have a working Fast PWM

@@ -5,22 +5,61 @@
  * Author : E0475141
  */ 
 
-#include <avr/io.h>
+ #define  F_CPU 1000000UL
 
+#include <avr/io.h>
+#include <util/delay.h>
+#include <avr/interrupt.h>
+
+int fadingDirection = 1;
 
 int main(void)
 {
-	DDRB = 0xFF;
+	DDRB |= (1<<PINB3);
+
+	// set to fast pwm
+	TCCR2 |= (1<<WGM21) | (1<< WGM20);  
+	/*
+	 Clear OC2 on Compare Match, set OC2 at BOTTOM,
+	 (non-inverting mode)
+	*/
+	TCCR2 |= (1<<COM21);	
 	
-	TCCR1A |= (1<<WGM11) | (1<<COM1A1) |(1<<COM1A0);
-	TCCR1B |= ( 1<<WGM13 ) | ( 1<<WGM12 ) | (1<<CS10);
+	TCCR2|= (1<<CS22) ;//64 prescale
 	
-	ICR1 = 19999;
-	OCR1A = ICR1 - 2000;
+	//duty cycle
+	OCR2 = 50; // 156 is 100%
+
+	// second timer setup
+	sei();
+	//setup another timer for interrupts on every 10ms
+	TCCR1B |= (1 << CS10) | (1 << CS11) | (1 << WGM12);
+
+	// Timer Interrupt Mask Register
+	//  OCIE1A: Timer/Counter1, Output Compare A Match Interrupt Enable
+	TIMSK = (1 << OCIE1A );
 	
-    /* Replace with your application code */
-    while (1) 
-    {
-    }
+	//timer Output Compare Registers
+	OCR1A = 156;// 15624; // 1 MHz / 64(scale)
+
+	while(1)
+	{
+		
+	}
+
+}
+
+ISR(TIMER1_COMPA_vect)
+{	
+	if(OCR2 == 155)
+	{
+		fadingDirection = -1;
+	}
+	else if (OCR2 == 0)
+	{
+		fadingDirection = 1;
+	}
+
+	OCR2 += fadingDirection;
 }
 
