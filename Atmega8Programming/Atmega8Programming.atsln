@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Atmel Studio Solution File, Format Version 11.00
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "Atmega8Test", "Atmega8Test\Atmega8Test.cppproj", "{DCE6C7E3-EE26-4D79-826B-08594B9AD897}"
 EndProject
@@ -16,6 +16,10 @@ EndProject
 Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "FastPWM", "PWM\FastPWM.cppproj", "{CB197E82-C1BE-421E-8CAB-4B7AFCB79A3D}"
 EndProject
 Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "PhaseCorrectedPWM", "PhaseCorrectedPWM\PhaseCorrectedPWM.cppproj", "{49157506-C5BC-45D0-8A2C-91F97E8C752D}"
+EndProject
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "ServoControl", "ServoControl\ServoControl.cppproj", "{C2669872-AD40-43BC-8C4E-1A40D5C9B43B}"
+EndProject
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "16BitTimer_PWM", "16BitTimer_PWM\16BitTimer_PWM.cppproj", "{C2C83182-703C-4E98-9862-05E419F5CC67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{49157506-C5BC-45D0-8A2C-91F97E8C752D}.Debug|AVR.Build.0 = Debug|AVR
 		{49157506-C5BC-45D0-8A2C-91F97E8C752D}.Release|AVR.ActiveCfg = Release|AVR
 		{49157506-C5BC-45D0-8A2C-91F97E8C752D}.Release|AVR.Build.0 = Release|AVR
+		{C2669872-AD40-43BC-8C4E-1A40D5C9B43B}.Debug|AVR.ActiveCfg = Debug|AVR
+		{C2669872-AD40-43BC-8C4E-1A40D5C9B43B}.Debug|AVR.Build.0 = Debug|AVR
+		{C2669872-AD40-43BC-8C4E-1A40D5C9B43B}.Release|AVR.ActiveCfg = Release|AVR
+		{C2669872-AD40-43BC-8C4E-1A40D5C9B43B}.Release|AVR.Build.0 = Release|AVR
+		{C2C83182-703C-4E98-9862-05E419F5CC67}.Debug|AVR.ActiveCfg = Debug|AVR
+		{C2C83182-703C-4E98-9862-05E419F5CC67}.Debug|AVR.Build.0 = Debug|AVR
+		{C2C83182-703C-4E98-9862-05E419F5CC67}.Release|AVR.ActiveCfg = Release|AVR
+		{C2C83182-703C-4E98-9862-05E419F5CC67}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
