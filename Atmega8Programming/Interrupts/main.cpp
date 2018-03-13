@@ -22,6 +22,8 @@ int main(void)
 	// Clear Timer on Compare Match (CTC) mode - WGM12
 	TCCR1B |= (1 << CS10) | (1 << CS11) | (1 << WGM12);
 	
+	
+	
 	// Timer Interrupt Mask Register
 	//  OCIE1A: Timer/Counter1, Output Compare A Match Interrupt Enable
 	TIMSK = (1 << OCIE1A );	

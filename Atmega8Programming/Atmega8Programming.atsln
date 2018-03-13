@@ -13,6 +13,10 @@ Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "KnowledgeCheck", "Knowledge
 EndProject
 Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "uartTest", "uartTest\uartTest.cproj", "{497CA041-D495-4F11-978F-0A279B573B38}"
 EndProject
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "FastPWM", "PWM\FastPWM.cppproj", "{CB197E82-C1BE-421E-8CAB-4B7AFCB79A3D}"
+EndProject
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "PhaseCorrectedPWM", "PhaseCorrectedPWM\PhaseCorrectedPWM.cppproj", "{49157506-C5BC-45D0-8A2C-91F97E8C752D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|AVR = Debug|AVR
@@ -39,6 +43,14 @@ Global
 		{497CA041-D495-4F11-978F-0A279B573B38}.Debug|AVR.Build.0 = Debug|AVR
 		{497CA041-D495-4F11-978F-0A279B573B38}.Release|AVR.ActiveCfg = Release|AVR
 		{497CA041-D495-4F11-978F-0A279B573B38}.Release|AVR.Build.0 = Release|AVR
+		{CB197E82-C1BE-421E-8CAB-4B7AFCB79A3D}.Debug|AVR.ActiveCfg = Debug|AVR
+		{CB197E82-C1BE-421E-8CAB-4B7AFCB79A3D}.Debug|AVR.Build.0 = Debug|AVR
+		{CB197E82-C1BE-421E-8CAB-4B7AFCB79A3D}.Release|AVR.ActiveCfg = Release|AVR
+		{CB197E82-C1BE-421E-8CAB-4B7AFCB79A3D}.Release|AVR.Build.0 = Release|AVR
+		{49157506-C5BC-45D0-8A2C-91F97E8C752D}.Debug|AVR.ActiveCfg = Debug|AVR
+		{49157506-C5BC-45D0-8A2C-91F97E8C752D}.Debug|AVR.Build.0 = Debug|AVR
+		{49157506-C5BC-45D0-8A2C-91F97E8C752D}.Release|AVR.ActiveCfg = Release|AVR
+		{49157506-C5BC-45D0-8A2C-91F97E8C752D}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
