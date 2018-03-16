@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Atmel Studio Solution File, Format Version 11.00
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "Atmega8Test", "Atmega8Test\Atmega8Test.cppproj", "{DCE6C7E3-EE26-4D79-826B-08594B9AD897}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "ServoControl", "ServoControl\ServoControl.cppproj", "{C2669872-AD40-43BC-8C4E-1A40D5C9B43B}"
 EndProject
 Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "16BitTimer_PWM", "16BitTimer_PWM\16BitTimer_PWM.cppproj", "{C2C83182-703C-4E98-9862-05E419F5CC67}"
+EndProject
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "ADC", "ADC\ADC.cppproj", "{AFC08B92-EFFD-4CB9-BB21-2AA72B64F0A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{C2C83182-703C-4E98-9862-05E419F5CC67}.Debug|AVR.Build.0 = Debug|AVR
 		{C2C83182-703C-4E98-9862-05E419F5CC67}.Release|AVR.ActiveCfg = Release|AVR
 		{C2C83182-703C-4E98-9862-05E419F5CC67}.Release|AVR.Build.0 = Release|AVR
+		{AFC08B92-EFFD-4CB9-BB21-2AA72B64F0A4}.Debug|AVR.ActiveCfg = Debug|AVR
+		{AFC08B92-EFFD-4CB9-BB21-2AA72B64F0A4}.Debug|AVR.Build.0 = Debug|AVR
+		{AFC08B92-EFFD-4CB9-BB21-2AA72B64F0A4}.Release|AVR.ActiveCfg = Release|AVR
+		{AFC08B92-EFFD-4CB9-BB21-2AA72B64F0A4}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
