@@ -15,6 +15,9 @@ int main(void)
 {
     /* Replace with your application code */
 	DDRB |= (1<<PINB1);
+	DDRB &= ~(1<<PINB2);
+
+	PORTB |= (1<< PINB2);
 
 	TCCR1A |= (1<<WGM11);
 	TCCR1B |= (1<<WGM12) | (1<<WGM13);
@@ -28,10 +31,11 @@ int main(void)
 
     while (1) 
     {
-		OCR1A = ICR1 - 800;
-		_delay_ms(500);
+		//if()
+		OCR1A = ICR1 - 700;
+		_delay_ms(1500);
 		OCR1A = ICR1 - 2200;
-		_delay_ms(50);
+		_delay_ms(1500);
     }
 }
 
