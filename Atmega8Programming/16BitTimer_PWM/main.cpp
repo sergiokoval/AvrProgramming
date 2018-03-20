@@ -26,16 +26,26 @@ int main(void)
 
 	TCCR1B |= (1<< CS10);
 
-	ICR1 = 19999;
-	OCR1A = 17999;
+	ICR1 = 5000;
+	OCR1A = 0;
 
     while (1) 
     {
+		
+		ICR1 = 500;
+		_delay_ms(100);
+		ICR1 = 1000;
+		_delay_ms(100);
+		ICR1 = 1500;
+		_delay_ms(100);
+		ICR1 = 300;
+		_delay_ms(100);
+
 		//if()
-		OCR1A = ICR1 - 700;
-		_delay_ms(1500);
-		OCR1A = ICR1 - 2200;
-		_delay_ms(1500);
+		//OCR1A = ICR1 - 700;
+		//_delay_ms(1500);
+		//OCR1A = ICR1 - 2200;
+		//_delay_ms(1500);
     }
 }
 
