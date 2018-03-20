@@ -21,6 +21,8 @@ Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "ServoControl", "ServoContro
 EndProject
 Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "16BitTimer_PWM", "16BitTimer_PWM\16BitTimer_PWM.cppproj", "{C2C83182-703C-4E98-9862-05E419F5CC67}"
 EndProject
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "SPI", "SPI\SPI.cppproj", "{E68EEC25-9340-45EA-B334-6005EECFDFD5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|AVR = Debug|AVR
@@ -63,6 +65,10 @@ Global
 		{C2C83182-703C-4E98-9862-05E419F5CC67}.Debug|AVR.Build.0 = Debug|AVR
 		{C2C83182-703C-4E98-9862-05E419F5CC67}.Release|AVR.ActiveCfg = Release|AVR
 		{C2C83182-703C-4E98-9862-05E419F5CC67}.Release|AVR.Build.0 = Release|AVR
+		{E68EEC25-9340-45EA-B334-6005EECFDFD5}.Debug|AVR.ActiveCfg = Debug|AVR
+		{E68EEC25-9340-45EA-B334-6005EECFDFD5}.Debug|AVR.Build.0 = Debug|AVR
+		{E68EEC25-9340-45EA-B334-6005EECFDFD5}.Release|AVR.ActiveCfg = Release|AVR
+		{E68EEC25-9340-45EA-B334-6005EECFDFD5}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
