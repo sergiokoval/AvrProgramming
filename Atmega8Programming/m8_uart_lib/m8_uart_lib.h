@@ -6,8 +6,8 @@
  */ 
 
 
-#ifndef M8_UART_H_
-#define M8_UART_H_
+#ifndef M8_UART_LIB_H_
+#define M8_UART_LIB_H_
 
 class UartSerial 
 {

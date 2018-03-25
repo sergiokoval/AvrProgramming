@@ -155,10 +155,10 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="m8_uart.cpp">
+    <Compile Include="m8_uart_lib.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="m8_uart.h">
+    <Compile Include="m8_uart_lib.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>

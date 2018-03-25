@@ -6,7 +6,7 @@
  */ 
 
 #include <avr/io.h>
-#include "m8_uart.h"
+#include "m8_uart_lib.h"
 
 void UartSerial::InitUart(unsigned int baudRate)
 {
