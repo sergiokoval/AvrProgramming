@@ -31,7 +31,7 @@ void UartSerial::InitUart(unsigned int baudRate)
 	UCSRC = (1 << URSEL) | (1 << UCSZ1) | ( 1 << UCSZ0); /* 8 data bits, 1 stop bit */
 }
 
-void UartSerial::SendChar(unsigned char data)
+void UartSerial::PrintChar(unsigned char data)
 {
 	// If UDRE is one, the buffer is empty, and therefore ready to be written
 	/* Wait for empty transmit buffer */
@@ -41,11 +41,45 @@ void UartSerial::SendChar(unsigned char data)
 	UDR = data;
 }
 
-void UartSerial::SendString(const char * str)
+void UartSerial::PrintString(const char * str)
 {
 	while(*str)
 	{
-		SendChar(*str);
+		PrintChar(*str);
 		str++;
 	}
+}
+
+void UartSerial::TransmitByte(uint8_t data) {
+	/* Wait for empty transmit buffer */
+	while ( !( UCSRA & (1<<UDRE)) )  // UDRE (USART Data Register Empty)
+	;
+	UDR = data;                                            /* send data */
+}
+
+void UartSerial::PrintByte(uint8_t byte) {
+	/* Converts a byte to a string of decimal text, sends it */
+	TransmitByte('0' + (byte / 100));                        /* Hundreds */
+	TransmitByte('0' + ((byte / 10) % 10));                      /* Tens */
+	TransmitByte('0' + (byte % 10));                             /* Ones */
+}
+
+char UartSerial::nibbleToHexCharacter(uint8_t nibble) 
+{
+	/* Converts 4 bits into hexadecimal */
+	if (nibble < 10) {
+		return ('0' + nibble);
+	}
+	else {
+		return ('A' + nibble - 10);
+	}
+}
+
+void UartSerial::PrintHex(uint8_t byte) {
+	/* Prints a byte as its hexadecimal equivalent */
+	uint8_t nibble;
+	nibble = (byte & 0b11110000) >> 4;
+	TransmitByte(nibbleToHexCharacter(nibble));
+	nibble = byte & 0b00001111;
+	TransmitByte(nibbleToHexCharacter(nibble));
 }

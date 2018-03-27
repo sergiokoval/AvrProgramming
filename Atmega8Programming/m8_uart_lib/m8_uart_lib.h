@@ -11,10 +11,16 @@
 
 class UartSerial 
 {
+	char nibbleToHexCharacter(uint8_t nibble);
+
 	public:
 		void InitUart(unsigned int baudRate);
-		void SendChar( unsigned char data );
-		void SendString(const char * str);
+		void PrintChar( unsigned char data );
+		void PrintString(const char * str);
+		void PrintByte(uint8_t byte);
+		void TransmitByte(uint8_t data);
+		void PrintHex(uint8_t byte);
+
 };
 
 

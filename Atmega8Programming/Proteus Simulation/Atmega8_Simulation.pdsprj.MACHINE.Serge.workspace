@@ -1,27 +1,21 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <WORKSPACE>
- <FRAME activewindow="2">
-  <PLACEMENT>2c0000000000000001000000c082ffff0083ffffffffffffffffffff8900000005000000f106000023040000</PLACEMENT>
+ <FRAME activewindow="0">
+  <PLACEMENT>2c0000000000000001000000c082ffff0083fffffffffffffffffffff9ffffff020000001b05000007030000</PLACEMENT>
   <WINDOW type="default" module="ISIS"/>
-  <WINDOW type="default" module="VSMSTUDIO">
-   <FILE ACTIVE="TRUE" NAME="ATMEGA8/main.c"/>
-   <STATE NAME="EDIT" VALUE="AAAA/wAAAAH9AAAAAgAAAAAAAAEAAAACxfwCAAAAAfsAAAAQAFAAcgBvAGoAZQBjAHQAcwEAAAAAAAACxQAAASwA////AAAAAwAABlAAAADY/AEAAAAB/AAAAAAAAAZQAAAARwD////6AAAAAAEAAAAD+wAAACAATwB1AHQAcAB1AHQARABvAGMAawBXAGkAZABnAGUAdAEAAAAA/////wAAAEcA////+wAAACoAZABvAGMAawA6ADAAOgBTAGkAbQB1AGwAYQB0AGkAbwBuACAATABvAGcAAAAAAP////8AAAAAAAAAAPsAAAAmAGQAbwBjAGsAOgAxADoAVwBhAHQAYwBoACAAVwBpAG4AZABvAHcAAAAAAP////8AAAAAAAAAAAAABUwAAALFAAAAAQAAAAIAAAAIAAAAAvwAAAAA"/>
-   <STATE NAME="DEBUG" VALUE="AAAA/wAAAAH9AAAAAgAAAAAAAAEAAAACr/wCAAAAAfsAAAAQAFAAcgBvAGoAZQBjAHQAcwAAAAAAAAACrwAAASwA////AAAAAwAABlAAAADY/AEAAAAB/AAAAAAAAAZQAAAAAAD////6AAAAAQEAAAAK+wAAACAATwB1AHQAcAB1AHQARABvAGMAawBXAGkAZABnAGUAdAAAAAAA/////wAAAEcA////+wAAACoAZABvAGMAawA6ADAAOgBTAGkAbQB1AGwAYQB0AGkAbwBuACAATABvAGcAAAAAAP////8AAAAAAAAAAPsAAAAmAGQAbwBjAGsAOgAxADoAVwBhAHQAYwBoACAAVwBpAG4AZABvAHcAAAAAAP////8AAAAAAAAAAPsAAAA6AGQAbwBjAGsAOgAzADoAQQBWAFIAIABDAFAAVQAgAFIAZQBnAGkAcwB0AGUAcgBzACAALQAgAFUAMQAAAAAA/////wAAAAAAAAAA+wAAADwAZABvAGMAawA6ADEAMAA6AEEAVgBSACAAUAByAG8AZwByAGEAbQAgAFMAdABhAGMAawAgAC0AIABVADEAAAAAAP////8AAAAAAAAAAPsAAAA4AGQAbwBjAGsAOgA2ADoAQQBWAFIAIABFAFAAUgBPAE0AIABNAGUAbQBvAHIAeQAgAC0AIABVADEAAAAAAP////8AAAAAAAAAAPsAAAA8AGQAbwBjAGsAOgA3ADoAQQBWAFIAIABQAHIAbwBnAHIAYQBtACAATQBlAG0AbwByAHkAIAAtACAAVQAxAAAAAAD/////AAAAAAAAAAD7AAAANgBkAG8AYwBrADoANAA6AEEAVgBSACAARABhAHQAYQAgAE0AZQBtAG8AcgB5ACAALQAgAFUAMQAAAAAA/////wAAAAAAAAAA+wAAADwAZABvAGMAawA6ADEAMwA6AEEAVgBSACAASQAvAE8AIABSAGUAZwBpAHMAdABlAHIAcwAgAC0AIABVADEAAAAAAP////8AAAAAAAAAAPsAAAAyAGQAbwBjAGsAOgAyADoAQQBWAFIAIABWAGEAcgBpAGEAYgBsAGUAcwAgAC0AIABVADEBAAAAAP////8AAAAAAAAAAAAABlAAAAOhAAAAAQAAAAIAAAAIAAAAAvwAAAAA"/>
-   <PROJECT ACTIVE="TRUE" NAME="ATMEGA8" CONFIGURATION="Debug"/>
-  </WINDOW>
-  <WINDOW type="default" module="VSMDEBUG"/>
  </FRAME>
  <MODULE name="VSMDEBUG">
   <PWI>
-   <POPUP w="400" x="214" flags="00000002" y="117" h="100" pid="0" iid="-1">
+   <POPUP w="400" x="217" flags="00000002" y="123" h="100" pid="0" iid="-1">
     <PROPERTIES>
-     <ITEM name="Message Column Width">281</ITEM>
+     <ITEM name="Message Column Width">144</ITEM>
      <ITEM name="ShowGrid">No</ITEM>
      <ITEM name="Source Column Width">100</ITEM>
+     <ITEM name="Time Column Width">120</ITEM>
      <ITEM name="Version">100</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="350" x="214" flags="00000032" y="117" h="100" pid="1" iid="-1">
+   <POPUP w="350" x="217" flags="00000032" y="123" h="100" pid="1" iid="-1">
     <PROPERTIES>
      <ITEM name="Address Column Width">87</ITEM>
      <ITEM name="AutoResize">No</ITEM>
@@ -38,19 +32,19 @@
      <ITEM name="nItems">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="695" x="979" flags="00000001" y="494" h="453" pid="0" iid="2">
+   <POPUP w="695" x="671" flags="00000001" y="315" h="453" pid="0" iid="2">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="450" x="533" flags="00008063" y="692" h="250" pid="0" iid="3">
+   <POPUP w="450" x="159" flags="00000063" y="337" h="250" pid="0" iid="3">
     <PROPERTIES>
      <ITEM name="AutoEcho">0</ITEM>
      <ITEM name="HexMode">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="30" x="214" flags="00000009" y="117" h="16" pid="3" iid="1">
+   <POPUP w="30" x="389" flags="00000008" y="341" h="16" pid="3" iid="1">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="1" x="214" flags="0000000a" y="117" h="1" pid="10" iid="1">
+   <POPUP w="1" x="217" flags="0000000a" y="123" h="1" pid="10" iid="1">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -60,7 +54,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="1" x="214" flags="0000000a" y="117" h="2" pid="6" iid="1">
+   <POPUP w="1" x="217" flags="0000000a" y="123" h="2" pid="6" iid="1">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -70,7 +64,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="1" x="214" flags="0000000a" y="117" h="2" pid="7" iid="1">
+   <POPUP w="1" x="217" flags="0000000a" y="123" h="2" pid="7" iid="1">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -90,7 +84,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="1" x="214" flags="0000000a" y="117" h="2" pid="4" iid="1">
+   <POPUP w="1" x="217" flags="0000000a" y="123" h="2" pid="4" iid="1">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -100,7 +94,7 @@
      <ITEM name="TopLineAddress">00000060</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="1" x="214" flags="0000000a" y="117" h="1" pid="13" iid="1">
+   <POPUP w="1" x="217" flags="0000000a" y="123" h="1" pid="13" iid="1">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -136,6 +130,17 @@
      <ITEM name="Value Column Width">537</ITEM>
      <ITEM name="Version">100</ITEM>
      <ITEM name="nItems">0</ITEM>
+    </PROPERTIES>
+   </POPUP>
+   <POPUP w="20" x="548" flags="0000800b" y="215" h="58" pid="1" iid="6">
+    <PROPERTIES>
+     <ITEM name="DataType">2</ITEM>
+     <ITEM name="DispChars">Yes</ITEM>
+     <ITEM name="DispFormat">2</ITEM>
+     <ITEM name="LastGoto0">10</ITEM>
+     <ITEM name="ShowChanges">Yes</ITEM>
+     <ITEM name="ShowToolTips">Yes</ITEM>
+     <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
   </PWI>
