@@ -23,6 +23,8 @@ Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "16BitTimer_PWM", "16BitTime
 EndProject
 Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "SPI", "SPI\SPI.cppproj", "{E68EEC25-9340-45EA-B334-6005EECFDFD5}"
 EndProject
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "m8_uart_lib", "m8_uart_lib\m8_uart_lib.cppproj", "{F84A4750-5100-48A3-8181-AAE06DA12DFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|AVR = Debug|AVR
@@ -69,6 +71,10 @@ Global
 		{E68EEC25-9340-45EA-B334-6005EECFDFD5}.Debug|AVR.Build.0 = Debug|AVR
 		{E68EEC25-9340-45EA-B334-6005EECFDFD5}.Release|AVR.ActiveCfg = Release|AVR
 		{E68EEC25-9340-45EA-B334-6005EECFDFD5}.Release|AVR.Build.0 = Release|AVR
+		{F84A4750-5100-48A3-8181-AAE06DA12DFF}.Debug|AVR.ActiveCfg = Debug|AVR
+		{F84A4750-5100-48A3-8181-AAE06DA12DFF}.Debug|AVR.Build.0 = Debug|AVR
+		{F84A4750-5100-48A3-8181-AAE06DA12DFF}.Release|AVR.ActiveCfg = Release|AVR
+		{F84A4750-5100-48A3-8181-AAE06DA12DFF}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
