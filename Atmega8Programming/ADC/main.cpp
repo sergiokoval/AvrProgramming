@@ -6,14 +6,18 @@
  */ 
 
 #include <avr/io.h>
+#include <avr/power.h>
 
 
 int main(void)
 {
 	ADMUX |= (1<<REFS0); // external ref
 	ADCSRA |= (1<<ADEN); // enable
-	ADCSRA |= (1<< ADPS0) | (1<<ADPS1) // /8 prescaler
+	ADCSRA |= (1<< ADPS0) | (1<<ADPS1); // /8 prescaler
     /* Replace with your application code */
+	
+	clock_prescale_set(clock_div_1);
+	
     while (1) 
     {
 		// start 
