@@ -15,9 +15,50 @@
 
 //TODO: extract button driver with lambda as action, upd no need, pass ports by address
 
+class led
+{
+	public:
+	// Use convenient class-specific typedefs.
+	typedef uint8_t port_type;
+	typedef uint8_t bval_type;
+	// The led class constructor.
+	led(const port_type p,
+	const bval_type b) : port(p),
+	bval(b)
+	{
+		// Set the port pin value to low.
+		*reinterpret_cast<volatile bval_type*>(port) &= static_cast<bval_type>(~bval);
+		// Set the port pin direction to output.
+		// Note that the address of the port direction
+		// register is one less than the address
+		// of the port value register.
+		const port_type pdir = port - 1U;
+		*reinterpret_cast<volatile bval_type*>(pdir) |= bval;
+	}
+	void toggle() const
+	{
+		// Toggle the LED via direct memory access.
+		*reinterpret_cast<volatile bval_type*>(port)
+		^= bval;
+	}
+	private:
+	// Private member variables of the class.
+	const port_type port;
+	const bval_type bval;
+};
+namespace {
+const led led_b5
+{
+	PORTB,
+	5
+};
+}
+
 
 int main(void)
 {
+	led_b5.toggle();
+	
 	LedDriver ledDriver(&PORTB, &DDRB);
 	SerialCommunication serialPort;
 

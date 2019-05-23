@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Atmel Studio Solution File, Format Version 11.00
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "Atmega8Test", "Atmega8Test\Atmega8Test.cppproj", "{DCE6C7E3-EE26-4D79-826B-08594B9AD897}"
 EndProject
@@ -24,6 +24,8 @@ EndProject
 Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "SPI", "SPI\SPI.cppproj", "{E68EEC25-9340-45EA-B334-6005EECFDFD5}"
 EndProject
 Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "m8_uart_lib", "m8_uart_lib\m8_uart_lib.cppproj", "{F84A4750-5100-48A3-8181-AAE06DA12DFF}"
+EndProject
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "JustLed", "JustLed\JustLed.cppproj", "{4C786325-417F-4CD4-B76C-7A8C5FD4F8CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{F84A4750-5100-48A3-8181-AAE06DA12DFF}.Debug|AVR.Build.0 = Debug|AVR
 		{F84A4750-5100-48A3-8181-AAE06DA12DFF}.Release|AVR.ActiveCfg = Release|AVR
 		{F84A4750-5100-48A3-8181-AAE06DA12DFF}.Release|AVR.Build.0 = Release|AVR
+		{4C786325-417F-4CD4-B76C-7A8C5FD4F8CA}.Debug|AVR.ActiveCfg = Debug|AVR
+		{4C786325-417F-4CD4-B76C-7A8C5FD4F8CA}.Debug|AVR.Build.0 = Debug|AVR
+		{4C786325-417F-4CD4-B76C-7A8C5FD4F8CA}.Release|AVR.ActiveCfg = Release|AVR
+		{4C786325-417F-4CD4-B76C-7A8C5FD4F8CA}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

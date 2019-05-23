@@ -11,7 +11,7 @@
 
 void LedDriver::SetOutputPin(short pin)
 {	
-	*_ddRegister |= (1 << pin);
+	(*_ddRegister) |= (1 << pin);
 	(*_port) &= ~(1 << pin);
 }
 
