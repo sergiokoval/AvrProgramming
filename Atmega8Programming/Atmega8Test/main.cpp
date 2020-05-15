@@ -15,9 +15,23 @@
 
 //TODO: extract button driver with lambda as action, upd no need, pass ports by address
 
+void doSomth(uint8_t& reg)
+{
+	reg  = 1;
+};
 
 int main(void)
 {
+	
+	//volatile uint8_t* port = (volatile uint8_t*)&PORTB;
+	//*port = 1;
+
+	volatile uint8_t* port3;
+
+	volatile uint8_t& port2 = PORTB;
+
+	port2 = 1;
+	
 	LedDriver ledDriver(&PORTB, &DDRB);
 	SerialCommunication serialPort;
 
